@@ -1,0 +1,219 @@
+#root {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.task-form input {
+  padding: .75rem .5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+.task-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+}
+.task-form input::placeholder {
+  color: var(--text-secondary);
+}
+
+.filter-bar {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.filter-btn {
+  background: var(--btn-bg);
+  border: 1px solid var(--border-secondary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+.filter-btn:hover {
+  background: var(--btn-hover);
+}
+.filter-btn.is-active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.task-list {
+  display: grid;
+  gap: .5rem;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  padding: .75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  transition: all .15s ease;
+  margin-bottom: .5rem;
+}
+.task-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+}
+
+.task-text { flex: 1; }
+.task-title-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .25rem;
+}
+.task-title { 
+  font-weight: 600; 
+  color: var(--text-primary);
+}
+.task-desc { 
+  opacity: .85; 
+  font-size: .95rem; 
+  color: var(--text-secondary);
+}
+
+.task-description-section {
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.task-desc-heading {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pill {
+  font-size: .75rem;
+  padding: .15rem .5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.status-pill.pending { 
+  background: rgba(245, 158, 11, 0.1); 
+  color: var(--warning-color); 
+  border-color: var(--warning-color); 
+}
+.status-pill.done { 
+  background: rgba(16, 185, 129, 0.1); 
+  color: var(--success-color); 
+  border-color: var(--success-color); 
+}
+
+.task-actions { 
+  display: flex; 
+  gap: .5rem; 
+  margin-top: .75rem;
+}
+.btn-complete.mark { 
+  background: rgba(16, 185, 129, 0.1); 
+  border-color: var(--success-color); 
+  color: var(--success-color);
+}
+.btn-complete.undo { 
+  background: rgba(245, 158, 11, 0.1); 
+  border-color: var(--warning-color); 
+  color: var(--warning-color);
+}
+.btn-delete { 
+  background: rgba(239, 68, 68, 0.1); 
+  border-color: var(--danger-color); 
+  color: var(--danger-color); 
+}
+
+
+.task-item .delete {
+  background: transparent;
+  border: none;
+  color: crimson;
+}
+
+.theme-toggle {
+  background: var(--btn-bg);
+  border: 1px solid var(--border-secondary);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  background: var(--btn-hover);
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
